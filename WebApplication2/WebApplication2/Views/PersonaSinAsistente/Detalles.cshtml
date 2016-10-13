@@ -1,0 +1,42 @@
+﻿@model WebApplication2.Models.Persona
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalles</title>
+</head>
+<body>
+    <div>
+        <h4>Persona</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Apellido)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Editar", new { id = Model.ID }) |
+        @Html.ActionLink("Regresar", "Index")
+    </p>
+</body>
+</html>

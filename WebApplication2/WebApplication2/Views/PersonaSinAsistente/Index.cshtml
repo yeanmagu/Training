@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication2.Models.Persona>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Crear Nuevo","Nuevo")
+    </p>
+
+    <table>
+          <tr>
+              <th>
+                  @Html.DisplayNameFor(model =>model.Nombre )
+              </th>
+              <th>
+                  @Html.DisplayNameFor(model => model.Apellido)
+              </th>
+              <th></th>
+          </tr>
+        @foreach (var item in Model)
+        {
+           <tr>
+               <td>
+                   @Html.DisplayFor(modelItem =>item.Nombre)
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.Apellido)
+               </td>
+               <td>
+                   @Html.ActionLink("Editar", "Editar", new { id = item.ID }) |
+                   @Html.ActionLink("Detalles", "Detalles", new { id = item.ID }) |
+                   @Html.ActionLink("Eliminar", "Eliminar", new { id = item.ID })
+               </td>
+           </tr> 
+        }
+    </table>
+</body>
+</html>
